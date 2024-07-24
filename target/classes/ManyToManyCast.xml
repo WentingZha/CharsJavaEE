@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zwt.charsjavaee.b_database.b6_mybatis.b6_7_relation.cast.ManyToManyCast">
+    <resultMap id="ManyToMany" type="com.zwt.charsjavaee.b_database.b6_mybatis.b6_7_relation.bean.Pupil">
+        <id column="pupil_id" property="pupilId"/>
+        <result column="pupil_name" property="name"/>
+        <result column="pupil_age" property="age"/>
+
+        <collection property="courses" ofType="com.zwt.charsjavaee.b_database.b6_mybatis.b6_7_relation.bean.Course">
+            <id column="course_id" property="id"/>
+            <result column="course_name" property="name"/>
+        </collection>
+    </resultMap>
+    <select id="checkAll" resultMap="ManyToMany">
+        SELECT pup_course.pupil_id pupil_id, pupil.name pupil_name, pupil.age pupil_age,pup_course.id course_id, course.name course_name FROM PUPIL pupil, COURSE course, PUP_COURSE pup_course WHERE pup_course.pupil_id = pupil.pupilId AND pup_course.course_id = course.id;
+    </select>
+
+</mapper>

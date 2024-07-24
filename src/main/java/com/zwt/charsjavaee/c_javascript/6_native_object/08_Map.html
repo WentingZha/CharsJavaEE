@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let map = new Map();
+
+    map.set("ZhaWenTing",36);
+    map.set("Au",46);
+    map.set("Lee",54);
+
+    document.write(map.size + "<br>");
+
+    document.write(map.get("ZhaWenTing") + "<br>");
+
+    let et = map.entries();
+    for(let i = 0; i < map.size; i++){
+        document.write(et.next().value + "<br>");
+    }
+
+    document.write(map.delete("ZhaWenTing") + "<br>");
+    let et2 = map.entries();
+    for(let i = 0; i < map.size; i++){
+        document.write(et2.next().value + "<br>");
+    }
+</script>
+</html>

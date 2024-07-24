@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property</title>
+</head>
+<body>
+    <input type="text" id="username"> 
+    <br>
+    <input type="button" id="btn1" value="Catch the id property of input area">  &nbsp;&nbsp;
+    <input type="button" id="btn2" value="Set the value property of input area">
+    <br><br>
+
+    <input type="radio" id="gender1" name="gender">Male
+    <label for="gender2"></label><input type="radio" id="gender2" name="gender">Female
+    <br>
+    <input type="button" id="btn3" value="Choose Female">
+    <br><br>
+    
+    <select>
+        <option>---Choose---</option>
+        <option id="un">University</option>
+        <option id="co">College</option>
+    </select>
+    <br>
+    <input type="button" id="btn4" value="Choose University">
+</body>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script>
+
+    $("#btn1").click(function(){
+        alert($("#username").attr("id"));
+    });
+    
+
+    $("#btn2").click(function(){
+        $("#username").attr("value","ZhaWenTing");
+    });
+    
+
+    $("#btn3").click(function(){
+        $("#gender2").prop("checked",true);
+    });
+
+    $("#btn4").click(function(){
+        $("#un").prop("selected",true);
+    });
+</script>
+</html>

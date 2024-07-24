@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURD</title>
+</head>
+<body>
+    <select id="s">
+        <option>---Choose---</option>
+        <option>Shanghai</option>
+        <option>Beijing</option>
+    </select>
+</body>
+<script>
+    let option = document.createElement("option");
+    option.innerText = "Shanghai";
+
+
+    let select = document.getElementById("s");
+    select.appendChild(option);
+
+    //3. removeChild()
+    //select.removeChild(option);
+
+    //4. replaceChild()
+    let option2 = document.createElement("option");
+    option2.innerText = "HongKong";
+    select.replaceChild(option2,option);
+
+</script>
+</html>

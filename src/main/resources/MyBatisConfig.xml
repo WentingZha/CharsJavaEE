@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--Change the file name to MyBatisConfig when test thew package b_database-->
+
+<!--MyBatis DTD constraints-->
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--configuration root label-->
+<configuration>
+
+    <!--   Import database connection configuration -->
+    <properties resource="jdbc.properties"/>
+
+    <settings>
+        <setting name="logImpl" value="log4j"/>
+    </settings>
+
+    <typeAliases>
+        <typeAlias type="com.zwt.charsjavaee.Student" alias="Student"/>
+        <typeAlias type="com.zwt.charsjavaee.Student1" alias="Student1"/>
+        <!--        <package name="com.zwt.charsjavaee"/>-->
+    </typeAliases>
+
+    <!--    Paging: jsqlparser.jar, pagehelper.jar-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"/>
+    </plugins>
+
+    <!--    One or several database environments -->
+    <environments default="mysql">
+        <environment id="mysql">
+            <transactionManager type="JDBC"/>
+            <!--            <dataSource type="POOLED">-->
+            <!--                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>-->
+            <!--                <property name="url" value="jdbc:mysql://127.0.0.1:3306/chadb1"/>-->
+            <!--                <property name="username" value="root"/>-->
+            <!--                <property name="password" value="Abc@1234"/>-->
+            <!--            </dataSource>-->
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="StudentMapper.xml"/>
+        <mapper resource="OneOneCast.xml"/>
+        <mapper resource="OneManyCast.xml"/>
+        <mapper resource="ManyToManyCast.xml"/>
+        <package name="com.zwt.charsjavaee.b_database.b6_mybatis.b6_8_annotation.cast"/>
+        <package name="com.zwt.charsjavaee.b_database.b6_mybatis.b6_8_annotation.one_one_cast"/>
+        <package name="com.zwt.charsjavaee.b_database.b6_mybatis.b6_8_annotation.one_multi_cast"/>
+        <package name="com.zwt.charsjavaee.b_database.b6_mybatis.b6_8_annotation.multi_to_multi_cast"/>
+        <package name="com.zwt.charsjavaee.b_database.b6_mybatis.b6_9_sql_method.cast"/>
+    </mappers>
+</configuration>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zwt.charsjavaee.b_database.b6_mybatis.b6_7_relation.cast.OneOneCast">
+<!--    Set the cast of table field and instance properties   -->
+    <resultMap id="oneOne" type="com.zwt.charsjavaee.b_database.b6_mybatis.b6_7_relation.bean.Card">
+        <id column="cid" property="id"/>
+        <result column="number" property="number"/>
+<!--
+        For one to one table
+        association: Set the relationship of the Person object included in the Card class
+        Property: the variables of included class 'Person'
+        javaType: data type of the included class 'Person'
+-->
+        <association property="p" javaType="com.zwt.charsjavaee.b_database.b6_mybatis.b6_7_relation.bean.Person">
+            <id column="pid" property="id"/>
+            <result column="name" property="name"/>
+            <result column="age" property="age"/>
+        </association>
+    </resultMap>
+    <select id="checkAll" resultMap="oneOne">
+        select c.id cid,number,pid,name,age from card c,person p where c.pid = p.id
+    </select>
+
+</mapper>

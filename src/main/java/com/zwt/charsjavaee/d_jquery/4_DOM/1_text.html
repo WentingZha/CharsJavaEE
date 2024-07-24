@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text</title>
+</head>
+<body>
+    <div id="div">I am div</div>
+    <input type="button" id="btn1" value="=Obtain the text of div">
+    <input type="button" id="btn2" value="Set the text of div">
+</body>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script>
+     $("#btn1").click(function(){
+         let value = $("#div").html();
+         alert(value);
+     });
+
+     $("#btn2").click(function(){
+         // $("#div").html("This is div");
+         $("#div").html("<b>This is div</b>");
+     });
+</script>
+</html>

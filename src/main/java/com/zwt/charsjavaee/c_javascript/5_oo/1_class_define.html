@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Define a class and Create an instance</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Human{
+
+        constructor(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+
+        show(){
+            document.write(this.name + "," + this.age + "<br>");
+        }
+
+
+        chat(){
+            document.write("chat...");
+        }
+    }
+
+
+    let human = new Human("ZhaWenTing",36);
+    human.show();
+    human.chat();
+</script>
+</html>

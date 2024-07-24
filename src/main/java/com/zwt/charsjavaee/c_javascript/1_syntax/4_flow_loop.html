@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow control and loop</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    let month = 3;
+    if(month >= 3 && month <= 5) {
+        document.write("Spring");
+    }else if(month >= 6 && month <= 8) {
+        document.write("Summer");
+    }else if(month >= 9 && month <= 11) {
+        document.write("Autumn");
+    }else if(month == 12 || month == 1 || month == 2) {
+        document.write("Winter");
+    }else {
+        document.write("Something wrong");
+    }
+
+    document.write("<br>");
+
+
+    switch(month){
+        case 3:
+        case 4:
+        case 5:
+            document.write("Spring");
+            break;
+        case 6:
+        case 7:
+        case 8:
+            document.write("Summer");
+            break;
+        case 9:
+        case 10:
+        case 11:
+            document.write("Autumn");
+            break;
+        case 12:
+        case 1:
+        case 2:
+            document.write("Winter");
+            break;
+        default:
+            document.write("Something wrong");
+            break;
+    }
+
+    document.write("<br>");
+
+
+    for(let i = 1; i <= 5; i++) {
+        document.write(i + "<br>");
+    }
+
+
+    let n = 6;
+    while(n <= 10) {
+        document.write(n + "<br>");
+        n++;
+    }
+</script>
+</html>

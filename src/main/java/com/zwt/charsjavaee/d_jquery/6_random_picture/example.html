@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random picture</title>
+</head>
+<body>
+
+<div style="background-color:red;border: dotted; height: 50px; width: 50px">
+    <img src="img/01.jpg" id="small" style="width: 50px; height: 50px;">
+</div>
+
+<div style="border: double ;width: 400px; height: 400px; position: absolute; left: 500px; top:10px">
+    <img src="" id="big" style="width: 400px; height: 400px; display:none;">
+</div>
+
+
+<input id="startBtn" type="button" style="width: 150px;height: 150px; font-size: 20px" value="Begin">
+<input id="stopBtn" type="button" style="width: 150px;height: 150px; font-size: 20px" value="End">
+</body>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script>
+
+    let imgs = [
+        "img/01.jpg",
+        "img/02.jpg",
+        "img/03.jpg",
+        ];
+		
+
+    let count = 0;
+    
+
+    let time = null;
+    
+
+    let imgSrc = "";
+    
+
+    $("#startBtn").click(function(){
+
+        $("#startBtn").prop("disabled",true);
+
+        $("#stopBtn").prop("disabled",false);
+
+        time = setInterval(function(){
+
+            let index = count % imgs.length;
+
+            imgSrc = imgs[index];
+            $("#small").prop("src",imgSrc);
+
+            count++;
+        },10);
+    });
+
+
+    $("#stopBtn").click(function(){
+
+        clearInterval(time);
+
+        $("#startBtn").prop("disabled",false);
+
+        $("#stopBtn").prop("disabled",true);
+
+        $("#big").prop("src",imgSrc);
+        $("#big").prop("style","width: 400px; height: 400px;");
+    });
+
+</script>
+</html>

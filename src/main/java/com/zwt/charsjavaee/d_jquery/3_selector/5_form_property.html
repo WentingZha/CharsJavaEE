@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form property</title>
+</head>
+<body>
+    <input type="text" disabled>
+    <input type="text" >
+    <input type="radio" name="gender" value="men" checked>Man
+    <input type="radio" name="gender" value="women">Woman
+    <input type="checkbox" name="hobby" value="study" checked>Study
+    <input type="checkbox" name="hobby" value="sleep" checked>Sleep
+    <select>
+        <option>---Choose---</option>
+        <option selected>University</option>
+        <option>College</option>
+    </select>
+</body>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script>
+    // 1.$("A:enabled");
+    let ins1 = $("input:enabled");
+    // alert(ins1.length);
+
+    // 2.$("A:disabled");
+    let ins2 = $("input:disabled");
+    // alert(ins2.length);
+
+    // 3.$("A:checked");
+    let ins3 = $("input:checked");
+    // alert(ins3.length);
+    // alert(ins3[0].value);
+    // alert(ins3[1].value);
+    // alert(ins3[2].value);
+
+    // 4.$("A:selected");
+    let select = $("select option:selected");
+    alert(select.html());
+
+</script>
+</html>

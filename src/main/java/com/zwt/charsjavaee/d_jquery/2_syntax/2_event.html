@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <input type="button" id="btn" value="Click me">
+    <br>
+    <input type="text" id="input">
+</body>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script>
+
+    $("#btn").click(function(){
+        alert("Click?");
+    });
+
+    //Obtain focus
+    $("#input").focus(function(){
+        alert("Inputting...");
+    });
+
+    //Lose focus
+    $("#input").blur(function(){
+        alert("Done...");
+    });
+</script>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegExp</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    let reg1 = /^[1][358][0-9]{9}$/;
+    document.write(reg1.test("1234567777") + "<br>");
+
+    let reg2 = /^[a-zA-Z_0-9]{4,16}$/;
+    document.write(reg2.test("ZhaWenTing"));
+</script>
+</html>

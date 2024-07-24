@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //Np parameter no return value
+    function println(){
+        document.write("Zha Wen Ting" + "<br>");
+    }
+    println();
+
+
+    //with parameter without return value
+    function getSum(num1,num2){
+        return num1 + num2;
+    }
+    let result = getSum(1,2);
+    document.write(result + "<br>");
+
+
+    //Several parameters, number is not determined
+    function getSum(...params) {
+        let sum = 0;
+        for(let i = 0; i < params.length; i++) {
+            sum += params[i];
+        }
+        return sum;
+    }
+    let sum = getSum(1,2,3);
+    document.write(sum + "<br>");
+
+    //Anonymous function
+    let fun = function(){
+        document.write("Zha Wen Ting");
+    }
+    fun();
+</script>
+</html>

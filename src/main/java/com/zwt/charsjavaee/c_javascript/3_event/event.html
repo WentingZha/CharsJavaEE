@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <img id="img" src="img/zwm.jpg"/>
+    <br>
+    <button id="up">Pre</button>
+    <button id="down">Next</button>
+</body>
+<script>
+    function up(){
+        let img = document.getElementById("img");
+        img.setAttribute("src","img/zwm.jpg");
+    }
+
+    function down(){
+        let img = document.getElementById("img");
+        img.setAttribute("src","img/zwm2.jpg");
+    }
+
+    let upBtn = document.getElementById("up");
+    upBtn.onclick = up;
+
+    let downBtn = document.getElementById("down");
+    downBtn.onclick = down;
+</script>
+</html>

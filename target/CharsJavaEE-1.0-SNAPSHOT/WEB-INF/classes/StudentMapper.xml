@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--b6_2_cast-->
+<!--<mapper namespace="StudentMapper">-->
+<!--b6_3_interface-->
+<!--<mapper namespace="com.zwt.charsjavaee.b_database.b6_mybatis.b6_3_interface.mapper.StudentMapper">-->
+<!--b6_4_dynamic_sql-->
+<!--<mapper namespace="com.zwt.charsjavaee.b_database.b6_mybatis.b6_4_dynamic_sql.cast.StudentCast">-->
+<!--b6_4_dynamic_sql-->
+<!--<mapper namespace="com.zwt.charsjavaee.b_database.b6_mybatis.b6_5_reuse.cast.StudentCast">-->
+<!--b6_6_paging-->
+<mapper namespace="com.zwt.charsjavaee.b_database.b6_mybatis.b6_6_carrier.cast.StudentCast">
+
+<!--    extract same sql for reuse -->
+    <sql id="check">
+        SELECT * FROM STUDENT1
+    </sql>
+
+<!--    Select function label   -->
+<!--    <select id="selectAll" resultType="com.zwt.charsjavaee.Student"/>-->
+    <select id="selectAll" resultType="Student">
+        SELECT * FROM STUDENT
+    </select>
+<!--   reuse sql -->
+    <select id="checkAll" resultType="Student1">
+        <include refid="check"/>
+    </select>
+
+
+<!--    <select id="selectById" resultType="com.zwt.charsjavaee.Student1" parameterType="java.lang.String">-->
+    <select id="selectById" resultType="com.zwt.charsjavaee.Student1" parameterType="string">
+        SELECT * FROM STUDENT1 WHERE sid = #{sid}
+    </select>
+    <insert id="insert" parameterType="com.zwt.charsjavaee.Student1">
+        INSERT INTO STUDENT1 (sid,name,age,score) VALUES (#{sid},${name},#{age},#{score})
+    </insert>
+    <update id="update" parameterType="com.zwt.charsjavaee.Student1">
+        UPDATE STUDENT1 SET name = ${name},score = #{score} WHERE sid = #{sid}
+    </update>
+    <delete id="delete" parameterType="java.lang.String">
+        DELETE FROM STUDENT1 WHERE sid = #{sid}
+    </delete>
+<!--    <select id="checkWithMultiCondition" resultType="Student1" parameterType="Student1">-->
+<!--        SELECT * FROM Student1 WHERE sid = #{sid} AND name = #{name} AND age = #{age}-->
+<!--    </select>-->
+
+<!-- <where> and <if> label  -->
+    <select id="checkWithMultiCondition" resultType="Student1" parameterType="Student1">
+        SELECT * FROM Student1
+        <where>
+            <if test="sid != null">
+                sid = #{sid}
+            </if>
+            <if test="name != null">
+                AND name = #{name}
+            </if>
+            <if test="age != null">
+                AND age = #{age}
+            </if>
+        </where>
+    </select>
+
+    <!-- <foreach> label
+        collection: list/array
+        open: beginning sql
+        close: end sql
+        item: parameter name
+        separator: the separator of IN()-->
+<!--    <select id="checkByIds" resultType="Student1" parameterType="list">-->
+<!--        SELECT * FROM Student1 WHERE sid IN ("1","2","3")-->
+<!--    </select>-->
+
+    <select id="checkByIds" resultType="Student1" parameterType="list">
+        SELECT * FROM Student1
+        <where>
+            <foreach collection="list" open="sid IN (" close=")" item="sid" separator=",">
+                #{sid}
+            </foreach>
+        </where>
+    </select>
+</mapper>

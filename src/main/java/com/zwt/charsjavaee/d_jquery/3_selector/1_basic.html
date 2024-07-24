@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Selector</title>
+</head>
+<body>
+    <div id="div1">div1</div>
+    <div class="cls">div2</div>
+    <div class="cls">div3</div>
+</body>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script>
+    //1.element selector   $("elementName")
+    let divs = $("div");
+    alert(divs.length);
+
+    //2.id selector   $("#idProperty")
+    let div1 = $("#div1");
+    alert(div1);
+
+    //3.class selector     $(".classProperty")
+    let cls = $(".cls");
+    alert(cls.length);
+
+</script>
+</html>

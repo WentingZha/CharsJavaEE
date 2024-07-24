@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    <div id="div"></div>
+    <input type="button" id="btn1" value="Add span to div"> <br><br><br>
+
+    <input type="button" id="btn2" value="Add 'Come on!' to the Bottom"> &nbsp;&nbsp;&nbsp;
+    <input type="button" id="btn3" value="Add 'Come on!' to the top"> &nbsp;&nbsp;&nbsp;
+    <input type="button" id="btn4" value="Add 'Challenge' below Beijing"> &nbsp;&nbsp;&nbsp;
+    <input type="button" id="btn5" value="Add 'Challenge' above Beijing"> &nbsp;&nbsp;&nbsp;
+    <ul id="city">
+        <li id="sh">Shanghai</li>
+        <li id="bj">Beijing</li>
+        <li id="cj">Chongqing</li>
+    </ul>
+    <ul id="desc">
+        <li id="co">Come on!</li>
+        <li id="cg">Challenge</li>
+    </ul>  <br><br><br>
+    <input type="button" id="btn6" value="Delete 'Come on'"> &nbsp;&nbsp;&nbsp;
+    <input type="button" id="btn7" value="Delete all the characterization"> &nbsp;&nbsp;&nbsp;
+</body>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script>
+    /*
+        1. $("element")
+        2. append(element)   add to the last element, called by added object
+        3. appendTo(element) add to the last element, called by adder
+        4. prepend(element)  add to the first element, called by added object
+        5. prependTo(element) add to the first element, called by adder
+        6. before(element)
+        7. after(element)
+        8. remove()
+        9. empty()
+    */
+    
+
+    $("#btn1").click(function(){
+        let span = $("<span>span</span>");
+        $("#div").append(span);
+    });
+
+    $("#btn2").click(function(){
+        //$("#city").append($("#jy"));
+        $("#co").appendTo($("#city"));
+    });
+
+
+    $("#btn3").click(function(){
+        //$("#city").prepend($("#jy"));
+        $("#co").prependTo($("#city"));
+    });
+    
+
+    $("#btn4").click(function(){
+        $("#bj").after($("#cg"));
+    });
+    
+
+    $("#btn5").click(function(){
+        $("#bj").before($("#cg"));
+    });
+
+    $("#btn6").click(function(){
+        $("#co").remove();
+    });
+
+    $("#btn7").click(function(){
+        $("#desc").empty();
+    });
+    
+</script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check</title>
+</head>
+<body>
+    <table id="tab1" border="1" width="800" align="center">
+        <tr>
+            <th style="text-align: left">
+                <input style="background:lightgreen" id="checkAll" type="button" value="check all">
+                <input style="background:lightgreen" id="checkNone" type="button" value="check none">
+                <input style="background:lightgreen" id="reverse" type="button" value="reverse">
+            </th>
+    
+            <th>Class ID</th>
+            <th>Class name</th>
+            <th>Class description</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td><label>
+                <input type="checkbox" class="item">
+            </label></td>
+            <td>1</td>
+            <td>mobile</td>
+            <td>Mobile commodity</td>
+            <td><a href="">modify</a>|<a href="">   delete</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item"></td>
+            <td>2</td>
+            <td>PC</td>
+            <td>PC commodity</td>
+            <td><a href="">modify</a>|<a href="">   delete</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item"></td>
+            <td>3</td>
+            <td>Shoes and bags</td>
+            <td>Shoes and bags c</td>
+            <td><a href="">modify</a>|<a href="">   delete</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item"></td>
+            <td>4</td>
+            <td>Household</td>
+            <td>Household commodity</td>
+            <td><a href="">modify</a>|<a href="">   delete</a></td>
+        </tr>
+    </table>
+</body>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script>
+
+    $("#checkAll").click(function(){
+        $(".item").prop("checked",true);
+    });
+
+    $("#checkNone").click(function(){
+        $(".item").prop("checked",false);
+    });
+
+    $("#reverse").click(function(){
+        let items = $(".item");
+        items.each(function(){
+            $(this).prop("checked",!$(this).prop("checked"));
+        });
+    });
+</script>
+</html>

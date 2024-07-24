@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>property of element</title>
+    <style>
+        .aColor{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <a>Click me!</a>
+</body>
+<script>
+    let a = document.getElementsByTagName("a")[0];
+    a.setAttribute("href","https://www.google.com");
+
+    let value = a.getAttribute("href");
+    //alert(value);
+
+    //3. removeAttribute()
+    //a.removeAttribute("href");
+
+    a.style.color = "red";
+
+    a.className = "aColor";
+
+</script>
+</html>

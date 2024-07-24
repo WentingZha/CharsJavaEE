@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    let weather = {
+        city : "Shanghai",
+        date : "1111-01-01",
+        celsius : "1° ~ 7°",
+        humidity : "71%"
+    };
+
+    let str = JSON.stringify(weather);
+    document.write(str + "<br>");
+
+    let weather2 = JSON.parse(str);
+    document.write("City：" + weather2.city + "<br>");
+    document.write("Date：" + weather2.date + "<br>");
+    document.write("Celsius：" + weather2.celsius + "<br>");
+    document.write("Humidity：" + weather2.humidity + "<br>");
+</script>
+</html>

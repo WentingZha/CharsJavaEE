@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterator</title>
+</head>
+<body>
+    <input type="button" id="btn" value="Iterate List">
+    <ul>
+        <li>C</li>
+        <li>Java</li>
+        <li>Python</li>
+    </ul>
+</body>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script>
+
+    // $("#btn").click(function(){
+    //     let lis = $("li");
+    //     for(let i = 0 ; i < lis.length; i++) {
+    //         alert(i + ":" + lis[i].innerHTML);
+    //     }
+    // });
+
+
+
+    //object.each()
+    // $("#btn").click(function(){
+    //     let lis = $("li");
+    //     lis.each(function(index,ele){
+    //         alert(index + ":" + ele.innerHTML);
+    //     });
+    // });
+
+
+    //$.each()
+    // $("#btn").click(function(){
+    //     let lis = $("li");
+    //     $.each(lis,function(index,ele){
+    //         alert(index + ":" + ele.innerHTML);
+    //     });
+    // });
+
+
+    //for of
+    $("#btn").click(function(){
+        let lis = $("li");
+        for(ele of lis){
+            alert(ele.innerHTML);
+        }
+    });
+</script>
+</html>

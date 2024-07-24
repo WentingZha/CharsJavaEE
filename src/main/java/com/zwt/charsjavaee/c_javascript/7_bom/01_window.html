@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window object</title>
+    <script>
+
+        function fun(){
+            alert("Time to charge！");
+        }
+    
+        //Timer
+        // let d1 = setTimeout("fun()",3000);
+        // clearTimeout(d1);
+
+        //Loop timer
+        let d2 = setInterval("fun()",3000);
+        //clearInterval(d2);
+
+        window.onload = function(){
+            // let div = document.getElementById("div");
+            alert(d2);
+        }
+    </script>
+</head>
+<body>
+    <div id="div">Ring Ring Ring</div>
+</body>
+</html>

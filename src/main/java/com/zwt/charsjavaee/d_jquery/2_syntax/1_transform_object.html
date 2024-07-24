@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform Object</title>
+</head>
+<body>
+    <div id="div">I am div</div>
+</body>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script>
+    let jsDiv = document.getElementById("div");
+    alert(jsDiv.innerHTML);
+    //alert(jsDiv.html());  This is a Js object, JQuery function is not allowed to be called
+
+    let jq = $(jsDiv);
+    alert(jq.html());
+
+    let jqDiv = $("#div");
+    alert(jqDiv.html());
+    // alert(jqDiv.innerHTML);   This is a JQuery object, Js function is not allowed to be called
+
+    //Turn JQuery to js object
+    let js = jqDiv[0];
+    alert(js.innerHTML);
+</script>
+</html>

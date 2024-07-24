@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location</title>
+    <style>
+        p{
+            text-align: center;
+        }
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        Registered！Jump to the start carrier after<span id="time"> 5 </span> seconds...
+    </p>
+</body>
+<script>
+
+    let num = 5;
+    function showTime() {
+        num--;
+
+        if(num <= 0) {
+            location.href = "index.html";
+        }
+
+        let span = document.getElementById("time");
+        span.innerHTML = num;
+    }
+
+    setInterval("showTime()",1000);
+</script>
+</html>

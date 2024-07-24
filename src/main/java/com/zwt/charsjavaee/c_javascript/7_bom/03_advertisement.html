@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News Carrier</title>
+    <link rel="stylesheet" href="css/news.css"/>
+</head>
+<body>
+
+    <img src="img/ad_big.jpg" id="ad_big" width="100%" style="display: none;"/>
+
+
+    <div class="top">
+        <a href="#" target="_self">Login&nbsp;&nbsp;</a>
+        <a href="#">Register&nbsp;&nbsp;</a>
+        <a href="#">More&nbsp;&nbsp;</a>
+    </div>
+
+
+    <div class="nav">
+        <img src="img/logo.png"/>
+        <a href="#">Start&nbsp;&nbsp;</a>/
+        <a href="#">Tech&nbsp;&nbsp;</a>/
+        <font color="gray">Main text</font>
+        <hr/>
+    </div>
+
+
+    <div class="left">
+        <a href="#"> <img src="img/cc.png"/> <span>&nbsp;Comment</span> </a>
+        <hr/>
+        <a href="#"> <img src="img/repost.png"/> <span>&nbsp;Repost</span> </a>  <br/>
+    </div>
+
+
+    <div class="center">
+        <div>
+            <h1>Servlet</h1>
+        </div>
+
+>
+        <div>
+            <i><font size="2" color="gray">Writer：ZWT 1111-01-01</font></i>
+            <hr/>
+        </div>
+
+        <div>
+            <h3>What is Servlet?</h3>
+        </div>
+>
+        <div>
+            <p>A Java applet running on the website</p>
+            <p>Send requests and receive responses
+            <ol>
+                <li>The servlets implement the Servlet Class</li>
+                <li>The servlets extend from GenericServlet or HttpServlet</li>
+                <li>The servlets implement JspPage and HttpJspPage</li>
+            </ol>
+            <img src="img/1.jpg" width="100%"/>
+            </p>
+            <p>Servlet is a single instance</p>
+            <p>init(): Only run on the the first request is received</p>
+            <p>request: doGet()/doPost() -> destroy()</p>
+            <img src="img/2.jpg" width="100%"/>
+            <p><b>How to write servlet。</b>Extend javax.servlet.http.HttpServlet</p>
+            <p>Overwrite doGet() and doPost()</p>
+        </div>
+    </div>
+
+    <div class="right">
+        <img src="img/ad1.jpg" width="100%"/>
+        <img src="img/ad2.jpg" width="100%"/>
+        <img src="img/ad3.jpg" width="100%"/>
+        <img src="img/ad1.jpg" width="100%"/>
+        <img src="img/ad2.jpg" width="100%"/>
+        <img src="img/ad3.jpg" width="100%"/>
+    </div>
+
+    <div class="footer">
+        <a href="#">About us</a> &nbsp;
+        <a href="#">Help</a> &nbsp;
+        <a href="#">Contact</a> &nbsp;
+    </div>
+</body>
+<script>
+
+    setTimeout(function(){
+        let img = document.getElementById("ad_big");
+        img.style.display = "block";
+    },3000);
+
+    setTimeout(function(){
+        let img = document.getElementById("ad_big");
+        img.style.display = "none";
+    },6000);
+</script>
+</html>

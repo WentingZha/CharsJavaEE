@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zwt.charsjavaee.b_database.b6_mybatis.b6_7_relation.cast.OneManyCast">
+    <resultMap id="oneMany" type="com.zwt.charsjavaee.b_database.b6_mybatis.b6_7_relation.bean.Classes">
+        <id column="cid" property="id"/>
+        <result column="cname" property="name"/>
+
+<!--        collection: set the relationship of collection included in the class
+            property: Set the variable
+            ofType: set the data type of collection included-->
+        <collection property="pupils" ofType="com.zwt.charsjavaee.b_database.b6_mybatis.b6_7_relation.bean.Pupil">
+            <id column="pid" property="pupilId"/>
+            <result column="pname" property="name"/>
+            <result column="pupil_age" property="age"/>
+        </collection>
+    </resultMap>
+
+    <select id="checkAll" resultMap="oneMany">
+        SELECT c.id cid, c.name cname, p.pupilId pid, p.name pname, p.age pupil_age FROM classes c, pupil p WHERE c.id = p.cid;
+    </select>
+
+</mapper>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic table</title>
+
+    <style>
+        table{
+            border: 1px solid;
+            margin: auto;
+            width: 500px;
+        }
+
+        td,th{
+            text-align: center;
+            border: 1px solid;
+        }
+        div{
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div>
+    <input type="text" id="name" placeholder="Name" autocomplete="off">
+    <input type="text" id="age"  placeholder="Age" autocomplete="off">
+    <input type="text" id="gender"  placeholder="Gender" autocomplete="off">
+    <input type="button" value="Insert" id="add">
+</div>
+
+    <table id="tb">
+        <caption>Student</caption>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Update</th>
+        </tr>
+
+        <tr>
+            <td>Au</td>
+            <td>23</td>
+            <td>male</td>
+            <td><a href="JavaScript:void(0);" onclick="drop(this)">Delete</a></td>
+        </tr>
+
+        <tr>
+            <td>Lee</td>
+            <td>24</td>
+            <td>Male</td>
+            <td><a href="JavaScript:void(0);" onclick="drop(this)">Delete</a></td>
+        </tr>
+
+    </table>
+
+</body>
+<script>
+
+    document.getElementById("add").onclick = function(){
+
+        let tr = document.createElement("tr");
+
+        let nameTd = document.createElement("td");
+        let ageTd = document.createElement("td");
+        let genderTd = document.createElement("td");
+        let deleteTd = document.createElement("td");
+
+        tr.appendChild(nameTd);
+        tr.appendChild(ageTd);
+        tr.appendChild(genderTd);
+        tr.appendChild(deleteTd);
+
+        let name = document.getElementById("name").value;
+        let age = document.getElementById("age").value;
+        let gender = document.getElementById("gender").value;
+
+        let nameText = document.createTextNode(name);
+        let ageText = document.createTextNode(age);
+        let genderText = document.createTextNode(gender);
+
+        nameTd.appendChild(nameText);
+        ageTd.appendChild(ageText);
+        genderTd.appendChild(genderText);
+
+        let a = document.createElement("a");
+        let aText = document.createTextNode("Delete");
+        a.setAttribute("href","JavaScript:void(0);");
+        a.setAttribute("onclick","drop(this)");
+        a.appendChild(aText);
+
+        deleteTd.appendChild(a);
+
+        let table = document.getElementById("tb");
+        table.appendChild(tr);
+    }
+
+    function drop(obj){
+        let table = obj.parentElement.parentElement.parentElement;
+        let tr = obj.parentElement.parentElement;
+        table.removeChild(tr);
+    }
+    
+    
+</script>
+</html>

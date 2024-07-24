@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind an unbind</title>
+</head>
+<body>
+    <input type="button" id="btn1" value="Click me">
+    <input type="button" id="btn2" value="unbind">
+</body>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script>
+    //Bind the click event to btn1
+    $("#btn1").on("click",function(){
+        alert("Click?");
+    });
+
+    //Use btn2 to unbind the btn1 click event
+    $("#btn2").on("click",function(){
+        $("#btn1").off("click");
+    });
+</script>
+</html>

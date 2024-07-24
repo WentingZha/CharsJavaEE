@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let s1 = new String("ZWT");
+    document.write(s1 + "<br>");
+
+    let s2 = "ZhaWT";
+    document.write(s2 + "<br>");
+    document.write(s2.length + "<br>");
+    document.write(s2.charAt(1) + "<br>");
+
+
+    // document.write(s2.indexOf("a") + "<br>");
+    // document.write(s2.substring(2,4) + "<br>");
+
+    let s3 = "ZhaWenTing,36,Female";
+    let arr = s3.split(",");
+    for(let i = 0; i < arr.length; i++) {
+        document.write(arr[i]+ "<br>");
+    }
+
+    let s4 = "ZhaWenTing";
+    let s5 = s4.replace("ZhaWen","CaaMan");
+    document.write(s5+ "<br>");
+</script>
+</html>
