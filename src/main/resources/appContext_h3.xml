@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop ="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+<!--    Target object-->
+    <bean id="target" class="com.zwt.charsjavaee.h_spring_aop.h3_xml_based_aop.Target"/>
+
+<!--    Aspect object-->
+    <bean id="myAspect" class="com.zwt.charsjavaee.h_spring_aop.h3_xml_based_aop.MyAspect"/>
+
+<!--    pointcut: set the method that need enhanced-->
+<!--    Execution expression
+        [modifier] returnType packageName className methodName (parameters), modifier is optional
+        * stand for any type, package, class or method
+        .. stand for several parameters with any types
+
+        examples:
+        execution(public void com.zwt.aop.Target.method())
+        execution(void com.zwt.aop.Target.*(..))
+        execution(*.com.zwt.aop.Target.*(..))
+        execution(*.com.zwt.aop.*.*(..))
+        execution(*.com.zwt.aop..*.*(..))
+        execution(* *..*.*(..))
+-->
+
+<!--    aop: [adviceType] method="" pointcut=""
+        Advice type:
+        aop:before   the enhanced method before pointcut
+        aop:after-returning    the enhanced method after pointcut
+        aop:around    the enhanced method before and after pointcut
+        aop:throwing    the enhanced method when an error occurs
+        aop:after    the final method will be executed no matter the error occurs or not
+
+-->
+    <aop:config>
+        <aop:aspect ref="myAspect">
+            <aop:pointcut id="myPointcut" expression="execution(* com.zwt.charsjavaee.h_spring_aop.h3_xml_based_aop.*.*(..)))"/>
+<!--            <aop:before method="before" pointcut="execution(public void com.zwt.charsjavaee.h_spring_aop.h3_xml_based_aop.Target.buildCabin())"/>-->
+<!--            <aop:before method="before" pointcut="execution(* com.zwt.charsjavaee.h_spring_aop.h3_xml_based_aop.*.*(..))"/>-->
+<!--            <aop:after-returning method="afterReturning" pointcut="execution(* com.zwt.charsjavaee.h_spring_aop.h3_xml_based_aop.*.*(..))"/>-->
+<!--            <aop:after-throwing method="throwing" pointcut="execution(* com.zwt.charsjavaee.h_spring_aop.h3_xml_based_aop.*.*(..))"/>-->
+<!--            <aop:after method="after" pointcut="execution(* com.zwt.charsjavaee.h_spring_aop.h3_xml_based_aop.*.*(..))"/>-->
+            <aop:after method="after" pointcut-ref="myPointcut"/>
+            <aop:before method="before" pointcut-ref="myPointcut"/>
+        </aop:aspect>
+    </aop:config>
+
+</beans>

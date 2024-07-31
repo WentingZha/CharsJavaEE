@@ -4,5 +4,70 @@
        xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="userCast" class="com.zwt.charsjavaee.f_spring_ioc.impl.UserCastImpl"/>
+<!--    lifecycle-->
+<!--    <bean id="userCast" class="com.zwt.charsjavaee.f_spring_ioc.cast.impl.UserCastImpl" init-method="init" destroy-method="destroy"/>-->
+
+
+<!--    static factory-->
+<!--    <bean id="userCast" class="com.zwt.charsjavaee.f_spring_ioc.factory.StaticFactory" factory-method="getUserCast"/>-->
+
+
+<!--    dynamic factory-->
+<!--    <bean id="factory" class="com.zwt.charsjavaee.f_spring_ioc.factory.DynamicFactory"/>-->
+<!--    <bean id="userCast" factory-bean="factory" factory-method="getUserCast"/>-->
+
+
+
+<!--    Dependency injection, the implementation of spring core IOC  -->
+<!--    <bean id="userCast" class="com.zwt.charsjavaee.f_spring_ioc.cast.impl.UserCastImpl"/>-->
+<!--    Service need Cast instance, so cast is injected to Service-->
+<!--    IOC can reduce the dependency of these two classes -->
+<!--    <bean id="userService" class="com.zwt.charsjavaee.f_spring_ioc.service.impl.UserServiceImpl1">-->
+<!--        <property name="userCast" ref="userCast"/>-->
+<!--    </bean>-->
+<!--    <bean id="userService" class="com.zwt.charsjavaee.f_spring_ioc.service.impl.UserServiceImpl1" p:userCast-ref="userCast"/>-->
+<!--    <bean id="userService" class="com.zwt.charsjavaee.f_spring_ioc.f1_context.service.impl.UserServiceImpl2">-->
+<!--        <constructor-arg name="userCast" ref="userCast"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="userCast" class="com.zwt.charsjavaee.f_spring_ioc.cast.impl.UserCastImpl">
+       <property name="name" value="ZWT"/>
+       <property name="age" value="36"/>
+    </bean>-->
+
+<!--    strList-->
+    <bean id="userCast" class="com.zwt.charsjavaee.f_spring_ioc.f1_context.cast.impl.UserCastImpl">
+       <property name="strList">
+           <list>
+               <value>111</value>
+               <value>222</value>
+           </list>
+       </property>
+        <property name="userMap">
+            <map>
+<!--                value-ref: bead id-->
+                <entry key="u1" value-ref="user1"/>
+                <entry key="u2" value-ref="user2"/>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="p1">prop1</prop>
+                <prop key="p2">prop2</prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="user1" class="com.zwt.charsjavaee.f_spring_ioc.f1_context.cast.User">
+        <property name="name" value="ZWT"/>
+        <property name="addr" value="HK"/>
+    </bean>
+    <bean id="user2" class="com.zwt.charsjavaee.f_spring_ioc.f1_context.cast.User">
+        <property name="name" value="GLZ"/>
+        <property name="addr" value="SH"/>
+    </bean>
+
+<!--    import other config file    -->
+    <import resource="applicationContext-book.xml"/>
+    <import resource="applicationContext-user.xml"/>
+
 </beans>

@@ -1,4 +1,4 @@
-mysql –u root -p 
+mysql -u root -p
 Abc@1234
 
 create database chadb2;
@@ -19,7 +19,7 @@ INSERT INTO USER  values (NULL,'HWH','35','212');
 
 SELECT * FROM USER;
 
--- Check users have 'Z' in his name, sort the result descendingly, display 4 items only
+-- Check users have 'Z' in his name, sort the result descend, display 4 items only
 SELECT * FROM USER WHERE NAME LIKE '%Z%' ORDER BY SEARCH_COUNT DESC LIMIT 0,4;
 
 CREATE TABLE NEWS(
@@ -42,3 +42,12 @@ $$
 CALL insert_data1();
 
 SELECT * FROM NEWS;
+
+
+CREATE TABLE ACCOUNT(
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    NAME VARCHAR(20),
+    MONEY INT
+);
+INSERT INTO ACCOUNT values (NULL,'caamanting',1000000);
+INSERT INTO ACCOUNT values (NULL,'HWH',1000000);

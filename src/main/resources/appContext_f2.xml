@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- add context label (namespace) instead of bean label-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context ="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--    Test2.java.test2/test3-->
+<!--        Property name: get the method name of 'cpds.setDriverClass(driver);'
+            remove 'set', and then change the first character to lowercase,
+            that is 'diverClass'-->
+       <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+           <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+           <property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/chadb2"/>
+           <property name="user" value="root"/>
+           <property name="password" value="Abc@1234"/>
+       </bean>
+
+
+
+
+    <!--    Test2.java.test3-->
+    <!--   Use Spring to inject the context and bean -->
+
+<!--
+    Load outside properties with namespace 'context'
+-->
+<!--    <context:property-placeholder location="classpath:jdbc1.properties"/>-->
+<!--    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">-->
+<!--        <property name="driverClass" value="${driver}"/>-->
+<!--        <property name="jdbcUrl" value="${url}"/>-->
+<!--        <property name="user" value="${username}"/>-->
+<!--        <property name="password" value="${password}"/>-->
+<!--    </bean>-->
+
+
+<!--    <bean id="userCast" class="com.zwt.charsjavaee.f_spring_ioc.f3_annotation.cast.impl.UserCastImpl"/>-->
+<!--    <bean id="userService" class="com.zwt.charsjavaee.f_spring_ioc.f3_annotation.service.impl.UserServiceImpl">-->
+<!--        <property name="userCast" ref="userCast"/>-->
+<!--    </bean>-->
+<!--    Set component scan-->
+<!--    <context:component-scan base-package="com.zwt.charsjavaee.f_spring_ioc.f3_annotation"/>-->
+
+</beans>

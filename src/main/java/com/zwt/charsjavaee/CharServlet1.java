@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 //Add dependency jar package in the pom.xml
 //Click refresh button in the right bar
 
-@WebServlet(urlPatterns = "/charServlet1")
+@WebServlet(urlPatterns = "/charServlet2")
 public class CharServlet1 extends HttpServlet {
 
     @Override

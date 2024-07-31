@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Jarkata -->
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+</web-app>
+    <servlet>
+        <servlet-name>DispatcherServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:springmvc_g1.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DispatcherServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <!-- Global Initialized parameters-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <!--        <param-value>appContext_g1.xml</param-value>-->
+        <param-value>classpath:appContext_g1.xml</param-value>
+    </context-param>
+
+
+    <!--    Set listener-->
+    <!--     <listener>-->
+    <!--         <listener-class>com.zwt.charsjavaee.g_spring_mvc.g1_basic_layers.listener.ContextLoaderListener</listener-class>-->
+    <!--     </listener>-->
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>ZhaServlet</servlet-name>
+        <servlet-class>com.zwt.charsjavaee.g_spring_mvc.g1_basic_layers.web.ZhaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ZhaServlet</servlet-name>
+        <url-pattern>/zhaServlet</url-pattern>
+    </servlet-mapping>
+
+
+
+</web-app>

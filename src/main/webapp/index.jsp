@@ -6,12 +6,20 @@ Servlet example
     <title>JSP - Char Servlet</title>
 </head>
 <body>
-<h1><%= "Char Servlet" %>
-</h1>
+<h1><%= "Char Servlet" %></h1>
 <br/>
 <a href="char-servlet">Char Servlet</a><br><br>
 
-<a href="${pageContext.request.contextPath}/charServlet1">Char Servlet 1</a><br><br>
+<a href="${pageContext.request.contextPath}/charServlet2">Char Servlet 1</a><br><br>
+
+<h1><%= "g1-Servlet1" %></h1>
+<a href="${pageContext.request.contextPath}/zhaServlet">Servlet1</a><br><br>
+
+<h1><%= "g2-Servlet2" %></h1>
+<a href="${pageContext.request.contextPath}/charge">Servlet2</a><br><br>
+
+<h1><%= "i-Servlet3" %></h1>
+<a href="${pageContext.request.contextPath}/save.jsp">Servlet3</a><br><br>
 
 <h1><%= "Ajax1: js" %></h1>
 <h2><%= "Register" %></h2>
@@ -28,7 +36,7 @@ Servlet example
 
 <h1><%= "Ajax5: Paging" %></h1>
 <h2><%= "Paging" %></h2>
-<jsp:include page="e_ajax_5_paging.jsp"/>
+<jsp:include page="e_ajax_5_paging.jsp"/><br>
 
 
 </body>
