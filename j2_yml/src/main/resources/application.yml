@@ -1,0 +1,59 @@
+
+country: China
+city: shanghai
+area: HongKong
+
+birthday: 1988-10-30
+
+
+user:
+  username: ZWT
+  age: 36
+
+
+hobby:
+  - reading
+  - music
+  - game
+
+
+a:
+  b:
+    c:
+      d:
+
+users:
+  - username: GLZ
+    age: 57
+  - username: ZWM
+    age: 62
+
+
+users1:
+  -
+    username: GLZ
+    age: 57
+  -
+    name: ZWM
+    age: 62
+
+
+user2: [{name:ZWT,age:36},{name:HWH,age:36}]
+
+baseDir: /Users/ZWT/CharsSpringBoot/boot_3_1_yml
+
+tempDir: ${baseDir}/src/main/java/com/zwt/controller/BootController.java
+tempDir1: "${baseDir} \temp \t1 \t2"
+
+datasource:
+  driver: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://127.0.0.1:3306/zhadb
+  username: root
+  password: Abc@1234
+
+
+# http://localhost:81/test//yml
+server:
+  port: 81
+  servlet:
+    context-path: /test
